@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Instrucciones de Análisis de Datos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Banco de Instrucciones de Análisis de Datos</h1>
+        <br>
+        22 DE MARZO || <A HREF="2.html">29 DE MARZO</A></H2> ||
+    </header>
+    
+    <main>
+        <section class="intro">
+            <p>Bienvenido al banco de instrucciones. Aquí encontrarás ejemplos prácticos para el análisis de datos utilizando Python y diversas librerías.</p>
+        </section>
+
+        <section class="libs">
+            <h2>Librerías necesarias</h2>
+            <ul>
+                <li><code>import pandas as pd</code> - Para manipulación de datos.</li>
+                <li><code>import numpy as np</code> - Para cálculos numéricos.</li>
+                <li><code>import matplotlib.pyplot as plt</code> - Para creación de gráficos.</li>
+                <li><code>import seaborn as sns</code> - Para visualización estadística avanzada.</li>
+            </ul>
+        </section>
+
+        <section class="file-upload">
+            <h2>Cargar archivo CSV</h2>
+       
+            <li><code>df = pd.read_csv('data.csv')</code> - Para cargar archivo.</li>
+
+            <li> <code> df.head()</code> - Ver las primeras filas del DataFrame</li>
+
+            
+            <li> <code> print(df.info())</code>- Información sobre los datos (tipos y valores nulos)</li>
+            
+            
+            <li> <code>print(df.describe())</code>- Estadísticas descriptivas (promedio, mínimo, máximo, etc.)</li>
+        </section>
+
+        <section class="operations">
+            <h2>Operaciones Comunes</h2>
+            <ul>
+                <li><strong>Media:</strong> <code>df['columna'].mean()</code></li>
+                <li><strong>Desviación Estándar:</strong> <code>df['columna'].std()</code></li>
+                <li><strong>Correlación Pearson:</strong> <code>correlacion_pearson = df[['columnaA', 'columnaB']].corr(method='pearson')
+                    <br>print(correlacion_pearson)
+                   
+</code></li>
+            </ul>
+        </section>
+
+        <section class="graphs">
+            <h2>Generar Gráficas de la libreria matplotlib</h2>
+            <ul>
+                <li><strong>Tamaño de la gráfica:</strong> 
+                    <code>plt.figure(figsize=(10,6))</code></li>
+                    <li> <strong>Grafica de barras:</strong> <code>plt.bar(df['COLUMNAEJEX'], df['COLUMNAEJEY'], color='darkblue')</code></li>
+                <li><strong>Gráfico de dispersión:</strong> <code>plt.scatter(df['COLUMNAEJEX'], df['COLUMNAEJEY'], color='blue')</code></li>
+           
+            </ul>
+            <h2>Generar Gráficas de la libreria seaborn</h2>
+            <ul>
+                <li><strong>Tamaño de la gráfica:</strong> 
+                    <code>plt.figure(figsize=(10,6))</code></li>
+                    <li> <strong>Grafica de barras:</strong> <code> sns.barplot(x='COLUMNAEJEX', y='COLUMNAEJEY', data=df, palette='Blues_d')</code></li>
+                <li><strong>Gráfico de dispersión:</strong> <code>sns.scatterplot(x='COLUMNAEJEX', y='COLUMNAEJEY', data=df, hue='COLUMNAREFERENCIA', palette='deep', s=200)</code></li>
+                <li><strong>Gráfico de lineas:</strong> <code>sns.lineplot(x='COLUMNAEJEX', y='COLUMNAEJEY', data=df, marker='o', linewidth=2, color='green')</code></li>
+               
+            </ul>
+            <h2>Colores para graficas </h2>
+            <ul>
+               <li><strong>Paletas: </strong><code>deep</code> – Paleta con colores profundos.
+                <code>muted</code> – Paleta con colores más suaves.
+                <code>pastel</code> – Paleta con tonos pastel.
+                <code>  dark</code> – Paleta con colores oscuros.
+                <code> colorblind</code> – Paleta que está pensada para personas con daltonismo.
+                <code>Blues</code> – Escala de azules (más tonos claros).
+                <code>Blues_d</code> – Escala de azules, pero más oscura.
+                <code>BuGn</code> – Escala de verde-azul.
+                <code>GnBu</code> – Escala de verde-azul clara.
+                <code>Oranges</code> – Escala de naranjas.
+                <code>Oranges_d</code> – Escala de naranjas más oscuros.
+                <code>coolwarm</code> – Paleta de colores que varían de azul a rojo.
+                <code> magma</code> – Escala que va del negro al amarillo, pasando por tonos rojos y naranjas.
+                <code>viridis</code> – Paleta que va de verde a amarillo.
+                <code>cividis</code> – Paleta perceptible por personas con deficiencia de visión en color.
+                <code>cubehelix</code> – Paleta que va de negro a blanco, pasando por varios tonos de grises.
+                <code>crest</code> – Paleta con tonos suaves de rosa, naranja y amarillo.</li>
+                <li><strong>Colores: </strong>darkblue - Azul oscuro
+                   <code>red</code> - Rojo,
+                   <code>green</code> - Verde,
+                   <code>blue </code>- Azul,
+                   <code>purple</code> - Púrpura,
+                   <code>orange</code> - Naranja,
+                   <code>yellow</code> - Amarillo,
+                   <code>pink</code> - Rosa,
+                   <code>brown</code> - Marrón,
+                   <code>gray</code> - Gris,
+                   <code>black</code> - Negro,
+                   <code>white</code> - Blanco,
+                   <code>lightblue</code> - Azul claro,
+                   <code>cyan</code> - Cian,
+                   <code>magenta</code> - Magenta
+            </ul>
+          
+                   
+            </ul>
+            <br><br><a href="DIVISAS.csv">DATA SET</a>
+            <BR><BR><a href="Actividad_22_marzo.ipynb">ACTIVIDAD</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Banco de Instrucciones de Análisis de Datos</p>
+    </footer>
+</body>
+</html>

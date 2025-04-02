@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Instrucciones de Análisis de Datos</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <header>
+        <h1>Banco de Instrucciones de Análisis de Datos</h1>
+        <br>
+        <a href="index.html">22 DE MARZO</a> || 29 DE MARZO ||
+    </header>
+    
+    <main>
+        <section class="intro">
+            <p>Bienvenido al banco de instrucciones. Aquí encontrarás ejemplos prácticos para el análisis de datos utilizando Python y diversas librerías.</p>
+        </section>
+
+        <section class="intro">
+            <H3>ARCHIVOS NECESARIOS: || <A href="Actividad_29_marzo.ipynb">ACTIVIDAD</A> || <A href="marketing.csv">DATASET</A> || <A href="DASHBOARD MARKETING.pptx">DASHBOARD ||</A></H3>
+        </section>
+
+        <section class="libs">
+            <h2>Contar e imprimir</h2>
+            <ul>
+                <code>total_registros = df_marketing['Monto'].count()</code><br>             
+                <code>print(total_registros)</code><br><br>
+            </ul>
+        </section>
+
+        <section class="libs">
+            <h2>Sumar todas las cantidades de un campo</h2>
+            <ul>
+                <code>suma_total = df_marketing['Monto'].sum()<br>
+                    print(suma_total)</code><br><br>
+            </ul>
+        </section>
+
+        <section class="libs">
+            <h2>Obtener valor Máximo o Mínimo de un campo</h2>
+            <ul>
+                <code>salario_maximo = df_marketing['Salario'].max()<br>
+                    salario_minimo = df_marketing['Salario'].min()<br>
+                  <br>
+                    print('SALARIO MAXIMO: $',salario_maximo)<br>
+                    print('SALARIO MINIMO: $',salario_minimo)</code><br><br>
+            </ul>
+        </section>
+
+
+        <section class="libs">
+            <h2>Gráfica Circular</h2>
+            <ul>
+                <code>
+                    genero_counts = df_marketing['Genero'].value_counts()<br>
+print(genero_counts)<br><br>
+ax = genero_counts.plot(kind='pie',<br>
+                        colors=['#a7d2f1', '#f3b0e1', '#ff6347', '#ffd700'],  # Puedes personalizar los colores<br>
+                        figsize=(10, 6),<br>
+                        autopct='%1.1f%%',  # Muestra los porcentajes<br>
+                        startangle=90,  # Empieza el gráfico desde un ángulo fijo<br>
+                        wedgeprops={'edgecolor': 'white', 'linewidth': 1.5},<br>
+                        textprops={'color': 'black','fontsize': 18}<br>
+                        )  # Bordes de las secciones<br><br>
+
+# Personalizar la gráfica<br>
+plt.title('Porcentaje de Genero', fontsize=16, fontweight='bold')  # Título más grande y en negrita<br>
+
+plt.ylabel('')  # Eliminar la etiqueta de "Genero" en el eje Y<br>
+plt.xticks(rotation=0)  # Asegurar que los nombres de las categorías se vean bien<br><br>
+
+# Ajustar el layout para no recortar<br><br>
+plt.tight_layout()<br><br>
+
+# Mostrar la gráfica<br>
+plt.show()<br>
+                </code>
+                    <br><br>
+            </ul>
+        </section>
+
+
+        <section class="libs">
+            <h2>Gráfica de barras horizontales</h2>
+            <ul>
+                <code>
+                    edad_counts = df_marketing['Edad'].value_counts()<br>
+                    print(edad_counts)<br><br>
+                    # Crear la gráfica de barras<br>
+                    ax=edad_counts.plot(kind='barh', color='Skyblue', figsize=(10, 6))<br><br>
+                    
+                    # Personalizar la gráfica<br>
+                    plt.title('Frecuencia de Edades')<br>
+                    plt.xlabel('Frecuenca')<br>
+                    plt.ylabel('Edad')<br>
+                    plt.xticks(rotation=0)<br>
+                    for i, valor in enumerate(edad_counts.values):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;ax.text(valor + 0.5, i, str(valor), ha='left', va='center', fontsize=10, color='blue')<br>
+                    plt.tight_layout()<br>
+                    plt.show()<br>
+
+                </code><br><br>
+            </ul>
+        </section>
+
+
+        <section class="libs">
+            <h2>Gráfica de barras verticales</h2>
+            <ul>
+                <code>
+                    ecivil_counts = df_marketing['Ecivil'].value_counts()<br>
+                    print(ecivil_counts)<br><br>
+                    # Crear la gráfica de barras<br>
+                    ax=ecivil_counts.plot(kind='bar', color='Orange', figsize=(10, 6))<br><br>
+                    
+                    # Personalizar la gráfica<br>
+                    plt.title('Frecuencia del Estado Civil')<br>
+                    plt.xlabel('Estado Cívil')<br>
+                    plt.ylabel('Frecuencia')<br>
+                    plt.xticks(rotation=0)<br>
+                    for i, valor in enumerate(ecivil_counts.values):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;ax.text(i, valor + 0.5, str(valor), ha='center', va='bottom', fontsize=10, color='blue')<br>
+                    plt.tight_layout()<br>
+                </code><br><br>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Banco de Instrucciones de Análisis de Datos</p>
+    </footer>
+</body>
+</html>
